@@ -19,16 +19,16 @@
             @endif 
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Title: </label>
-		    <input type="text" class="form-control" name="title" aria-describedby="emailHelp" placeholder="Enter category" value="{{ isset ($post) ? $post->title : '' }}">
+		    <input type="text" class="form-control" name="title" aria-describedby="emailHelp" placeholder="enter post" value="{{ isset ($post) ? $post->title : '' }}">
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Desc: </label>
-		   <textarea class="form-control" name="description" rows="2">{{ isset($post) ? $post->description : "" }}</textarea>
+		   <textarea class="form-control" name="description" placeholder="enter description" rows="2">{{ isset($post) ? $post->description : "" }}</textarea>
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Content: </label>
 		   
-		   <input type="hidden" id="x" name="content" value="{{ isset($post) ? $post->content : '' }}">
+		   <input type="hidden" id="x" name="content" placeholder="enter content" value="{{ isset($post) ? $post->content : '' }}">
 		   <trix-editor input="x"></trix-editor>
 		  </div>
 
@@ -56,11 +56,14 @@
 				    <select class="form-control" id="selecttag" name="tags[]" multiple>		      	
 				    @foreach($tags as $tag)	
 				      <option value="{{ $tag->id }}"
+				      @if(isset($posts) && $posts->count() > 0)	
 				      	@foreach($posts as $post)
 					      	@if($post->hasTag($tag->id)) 
 					      	   selected
 					      	@endif   
 				      	@endforeach 
+
+				      @endif	
 				      	  >{{ $tag->name }}</option>
 					@endforeach 			  
 				    </select>
