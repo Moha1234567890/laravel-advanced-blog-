@@ -33,7 +33,7 @@
 		  </div>
 		  <div class="form-group">
 		  	<label>pic</label>
-            <img class="form-control" src="{{$user->hasPicture() ?  asset('storage/'. $user->getPicture()) : $user->getGravatar()}}" width="140px" height="10px"> 
+            <img class="form-control" src="{{$user->hasPicture() ?  asset('storage/'. $user->getPicture()) : $user->getGravatar()}}" style="width:150px; height:150px"> 
 
 		    <input type="file" class="form-control" name="picture">
 		  </div>

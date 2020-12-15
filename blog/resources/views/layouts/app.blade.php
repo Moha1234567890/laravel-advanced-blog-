@@ -51,7 +51,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -82,7 +82,7 @@
             </div>
             @endif
             <div class="row">
-                <div class="col-md-4 py-4">
+                <div class="col-md-3 py-4">
                     <ul class="list-group">
                         @if(auth()->user()->isAdmin())
                           <li class="list-group-item">
